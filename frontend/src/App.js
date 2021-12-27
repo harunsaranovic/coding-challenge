@@ -26,7 +26,7 @@ function App() {
     <div className="App">
         <Switch>
         <Route exact path="/">
-          {localStorage.getItem('apiKey') ? <Redirect to="/dashboard" /> : <Redirect to="/login" /> }
+          {localStorage.getItem('apiKey') ? <Redirect to="/home" /> : <Redirect to="/login" /> }
         </Route>
         <Route path="/login" component={Login} /> 
         <Route path="/register" component={Register} /> 

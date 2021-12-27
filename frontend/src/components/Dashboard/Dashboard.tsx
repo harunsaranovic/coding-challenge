@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from '../Header/Header';
+import DashboardMenu from '../DashboardMenu/DashboardMenu';
 import styles from './Dashboard.module.scss';
 import AuthService from '../../services/AuthService.js';
 import { useHistory } from 'react-router';
@@ -18,9 +18,9 @@ const Dashboard: React.FC<PropTypes> = ({ comp }) => {
 
 	return (
 		<div className={styles.Dashboard}>
-			<div className={'flex'}>
-				<Header active={comp} />
-				<div className="flex flex-col w-0 flex-1">
+			<div className={'h-screen flex overflow-hidden bg-gray-100'}>
+				<DashboardMenu active={comp} />
+				<div className="flex flex-col w-0 flex-1 overflow-hidden">
 					{comp === 'admin' ? <Admin /> : ''}
 					{comp === 'home' ? <Home /> : ''}
 				</div>

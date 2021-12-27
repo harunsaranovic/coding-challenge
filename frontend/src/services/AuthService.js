@@ -21,7 +21,7 @@ const login = async (email, password) => {
                 localStorage.setItem('email', data.email);
                 axios.defaults.headers.common['Authorization'] = `Bearer ${data.apiKey}`;
                 axios.defaults.headers.common.Accept = 'application/json';
-                //window.location.href = "/home";
+                window.location.href = "/home";
             }
             return data;
         }

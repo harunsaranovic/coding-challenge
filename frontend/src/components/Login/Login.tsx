@@ -4,8 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import AuthService from '../../services/AuthService.js';
 
 const Login: FunctionComponent<{}> = () => {
-	const [ email, setEmail ] = useState<string>('');
-	const [ password, setPassword ] = useState<string>('');
+	const [ email, setEmail ] = useState<string>('harun.saranovic@gmail.com');
+	const [ password, setPassword ] = useState<string>('password');
 	const [ loginError, setLoginError ] = useState<string>('');
 	let history = useHistory();
 
@@ -36,7 +36,7 @@ const Login: FunctionComponent<{}> = () => {
 						</a>
 					</p>
 				</div>
-				<form className="mt-8 space-y-6">
+				<div className="mt-8 space-y-6">
 					<input type="hidden" name="remember" defaultValue="true" />
 					<div className="rounded-md shadow-sm -space-y-px">
 						<div>
@@ -47,7 +47,6 @@ const Login: FunctionComponent<{}> = () => {
 								id="email-address"
 								name="email"
 								type="email"
-								autoComplete="email"
 								onChange={(e) => {
 									setEmail(e.target.value);
 								}}
@@ -67,7 +66,6 @@ const Login: FunctionComponent<{}> = () => {
 								onChange={(e) => {
 									setPassword(e.target.value);
 								}}
-								autoComplete="current-password"
 								required
 								className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
 								placeholder="Password"
@@ -103,7 +101,7 @@ const Login: FunctionComponent<{}> = () => {
 							Sign in
 						</button>
 					</div>
-				</form>
+				</div>
 			</div>
 		</div>
 	);
